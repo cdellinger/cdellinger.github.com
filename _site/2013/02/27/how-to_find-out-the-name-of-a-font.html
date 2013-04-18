@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv='Content-Type' content='text/html; charset=utf-8'>
-    <title>Dawn of a new day</title>
+    <title>How to find out the name of a font</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="My personal blog">
     <meta name="author" content="Chris Dellinger">
@@ -37,53 +37,30 @@
                     <div class="content">    
     <div class="row">   
         <div class="span7 column">
-            <h1>Dawn of a new day</h1>
+            <h1>How to find out the name of a font</h1>
         </div>
     </div>
     
     <div class="row">   
         <div class="span7 columns">
-            <h5 id='wordpress_hack_for_bitly'>Wordpress hack for bit.ly</h5>
+            <h5 id='how_to_find_out_the_name_of_a_font'>How To Find Out The Name Of A Font</h5>
 
-<p>Wow, just spent 30min hacking the &#8216;Sociable&#8217; plugin for Wordpress to use bit.ly instead of awe.sm. Harder than you might have thought! If anybody&#8217;s interested then give me a shout and I&#8217;ll take you through it. However, if you&#8217;re content with just hacking the code and hard coding your bit.ly login name and API key into your sociable.php file then you can do the following&#8230;</p>
-
-<p>Replace everything between line 735 and the } else { in sociable.php with the following&#8230;</p>
-
-<pre><code>$bitlyapikey      = &#39;{api_key}&#39;;
-$bitlylogin          = &#39;{api_login&#39;};
-
-$login = &#39;&amp;login;=&#39;.$bitlylogin;
-$key = &#39;&amp;apiKey;=&#39;.$bitlyapikey;
-
-$bitlyurl = &#39;http://api.bit.ly/shorten?version=2.0.1&amp;longUrl;=&#39;.$permalink.$login.$key;
-
-$bitlyurl = file_get_contents($bitlyurl);
-$bitlyurl = (string) $bitlyurl;
-
-$find = &#39;!&quot;shortUrl&quot;: &quot;(.+?)&quot;!&#39;;
-$matches = array();
-preg_match($find, $bitlyurl , $matches);
-
-if(isset($matches[&#39;1&#39;])) {
-    $url = str_replace(&#39;PERMALINK&#39;, $matches[&#39;1&#39;], $url);
-} else {
-    $url = str_replace(&#39;PERMALINK&#39;, $permalink, $url);
-}</code></pre>
+<p>Have you ever seen a font you really love but are unsure what it actually is? Yesterday I ran into an issue where I had a logo created by a contractor who is long gone and I needed to know what font he used in the logo. How hard could that be? Well after about ten minutes of searching I quickly realized there are way more fonts in the world than I ever realized and that I didn’t know enough about this space to do a keyword search to find my mystery font. Tiring of a manual search I wondered if there were any free tools on the web to help identify fonts. One quick Google search and voila, I found <a href='http://www.myfonts.com/WhatTheFont/' title='What The Font'>WhatTheFont</a>, a free tool on <a href='http://www.myfonts.com/' title='MyFont.com'>myfont.com</a> which quickly found my font with a minimal amount of work for me. All I needed to do was upload an image of the font in question, so in my case I stripped out the word in the logo and saved it as a png file. I then uploaded and the site tried to identify what the image was saying. In my case it guessed 100% correct, but in case it was unable to, the sites gives you the ability to tell it what the word(s) say by overriding their guess. Once I had completed that, WhatTheFont gave me a list of guesses for what my mystery font was and sure enough its top/best guess was exactly what I was looking for! This tool was a lifesaver.</p>
         </div>
     </div>
     
     <div class="pager hidden-phone hidden-tablet">
-        <a class="prev" href="" title="Previous Post: "><i class="icon-arrow-left icon-white"></i></a>
-        <a class="next" href="/2013/02/27/how-to_find-out-the-name-of-a-font.html" title="Previous Post: How to find out the name of a font"><i class="icon-arrow-right icon-white"></i></a>
+        <a class="prev" href="/2013/02/18/dawn-of-a-new-day.html" title="Previous Post: Dawn of a new day"><i class="icon-arrow-left icon-white"></i></a>
+        <a class="next" href="/2013/03/10/finding-available-domain-names.html" title="Previous Post: Finding Available Domain Names"><i class="icon-arrow-right icon-white"></i></a>
     </div>
     
     <div class="row">   
         <div class="span7 column">
             <p>
-              <i class="icon-calendar"></i> February 18, 2013
-              | <i class="icon-comment"></i> <a href="/2013/02/18/dawn-of-a-new-day.html#disqus_thread" data-disqus-identifier="/2013/02/18/dawn-of-a-new-day.html"></a>     
+              <i class="icon-calendar"></i> February 27, 2013
+              | <i class="icon-comment"></i> <a href="/2013/02/27/how-to_find-out-the-name-of-a-font.html#disqus_thread" data-disqus-identifier="/2013/02/27/how-to_find-out-the-name-of-a-font.html"></a>     
               <br />
-              <i class="icon-tags"></i> Tags : <a href="/tags/blog" rel="tooltip" title="View pages tagged with &quot;blog&quot;"><span class="label label-info">blog</span></a>   
+              <i class="icon-tags"></i> Tags : <a href="/tags/font" rel="tooltip" title="View pages tagged with &quot;font&quot;"><span class="label label-info">font</span></a>     <a href="/tags/design" rel="tooltip" title="View pages tagged with &quot;design&quot;"><span class="label label-info">design</span></a>   
               <br />
               <a href="https://twitter.com/share" class="twitter-share-button" data-via="">Tweet</a> <g:plusone size="medium"></g:plusone></h5>
             </p>
@@ -138,7 +115,7 @@ if(isset($matches[&#39;1&#39;])) {
 
     <footer class="footer">
   <div class="container">
-    <p class="pull-right">  |  <a href="#">Back to top</a>  |    <a href="/2013/02/27/how-to_find-out-the-name-of-a-font.html" title="Next Post: How to find out the name of a font">Next Blog Post &raquo; </a>   </p>        
+    <p class="pull-right"> <a href="/2013/02/18/dawn-of-a-new-day.html" title="Previous Post: Dawn of a new day">&laquo; Previous Blog Post</a>    |  <a href="#">Back to top</a>  |    <a href="/2013/03/10/finding-available-domain-names.html" title="Next Post: Finding Available Domain Names">Next Blog Post &raquo; </a>   </p>        
     <p>Page last generated on April 18, 2013</p>
     <p>If need be, <a href="https://github.com//Feedback/issues/new" title="Leave feedback for "  target="_blank" >leave me some feedback</a>.</p>   
     <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script> 
