@@ -1,0 +1,20 @@
+title: Thordog
+
+url: http://www.thordog.com
+
+permalink: /:year/:month/:day/:title/
+
+author:
+    name: Chris Dellinger
+    github: cdellinger
+
+comments:
+    provider: disqus
+    disqus:
+        short_name: thordog
+        
+analytics:
+    provider: google 
+    google: 
+        tracking_id: 'UA-790004-9'
+        domain: 'thordog.com'

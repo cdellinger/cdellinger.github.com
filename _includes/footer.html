@@ -1,11 +1,20 @@
-<footer class="footer">
-  <div class="container">
-    <p class="pull-right">{% if page.previous.url %} <a href="{{page.previous.url}}" title="Previous Post: {{page.previous.title}}">&laquo; Previous Blog Post</a>  {% endif %}  |  <a href="#">Back to top</a>  |  {% if page.next.url %}  <a href="{{page.next.url}}" title="Next Post: {{page.next.title}}">Next Blog Post &raquo; </a>  {% endif %} </p>        
-    <p>Page last generated on {{ site.time | date: "%B %e, %Y" }}</p>
-    <p>If need be, <a href="https://github.com/{{ site.author.github }}/Feedback/issues/new" title="Leave feedback for {{ site.author.name  }}"  target="_blank" >leave me some feedback</a>.</p>   
-    <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script> 
+<div class="navbar navbar-inverse navbar-fixed-bottom">
+  <div class="navbar-inner">
+    <ul class="nav pull-right">
+      <li style="padding-top:5px;"><a href="https://github.com/{{ site.author.github }}/Feedback/issues/new" title="Leave feedback for {{ site.author.name  }}"  target="_blank" >Leave Feedback</a></li>
+
+      <li><a title="LinkedIn Profile" href="http://www.linkedin.com/pub/chris-dellinger/0/451/816"><img src="/images/linkedin_32.png" alt="LinkedIn Profile"/></a>
+      <li><a title="GitHub Profile" href="http://www.github.com/cdellinger"><img src="/images/github_32.png" alt="GitHub Profile"/></a>
+      <li><a title="Stack Overflow Profile" href="http://stackoverflow.com/users/161276/chris-dellinger"><img src="/images/stackoverflow_32.png" alt="Google+ Profile"/></a>
+      <li><a title="Facebook Profile" href="https://www.facebook.com/chris.dellinger"><img src="/images/facebook_32.png" alt="Facebook Profile"/></a>
+      <li><a title="Twitter Profile" href="https://twitter.com/chrisdellinger"><img src="/images/twitter_32.png" alt="Twitter Profile"/></a>
+      <li><a title="Google+ Profile" href="https://plus.google.com/104090119135751863083/posts"><img src="/images/googleplus_32.png" alt="Google+ Profile"/></a>        
+    </ul>
   </div>
-</footer>
+</div>
+
+
+
 
 <script type="text/javascript">
 /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
