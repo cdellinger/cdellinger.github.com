@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>Thordog</title>
+        <description>Personal blog of Chris Dellinger</description>
+        <link>http://www.thordog.com</link>
+        <atom:link href="http://www.thordog.com/feed.xml" rel="self" type="application/rss+xml" />
+        
+            <item>
+                <title>Finding Available Domain Names</title>
+                <description>&lt;p&gt;I came across a service for finding available domain names that I absolutely love, its called &lt;a href='http://www.bustaname.com/' title='Bust A Name'&gt;Bust A Name&lt;/a&gt;. &lt;a href='http://www.bustaname.com'&gt;&lt;img align='right' src='/images/posts/bustaname.gif' style='padding-left:5px;padding-top:5px;' /&gt;&lt;/a&gt;To use the service you choose several keywords that you would potentially like in your domain name and it checks out all the available permutations. This is 100 times better than the old one at a time domain lookups I’ve previously performed. Take a moment to check this site out and let me know what you think.&lt;/p&gt;</description>
+                <pubDate>Sun, 10 Mar 2013 00:00:00 -0500</pubDate>
+                <link>http://www.thordog.com/2013/03/10/finding-available-domain-names/</link>
+                <guid isPermaLink="true">http://www.thordog.com/2013/03/10/finding-available-domain-names/</guid>
+            </item>
+        
+            <item>
+                <title>How to find out the name of a font</title>
+                <description>&lt;p&gt;Have you ever seen a font you really love but are unsure what it actually is? Yesterday I ran into an issue where I had a logo created by a contractor who is long gone and I needed to know what font he used in the logo. How hard could that be? Well after about ten minutes of searching I quickly realized there are way more fonts in the world than I ever realized and that I didn’t know enough about this space to do a keyword search to find my mystery font.&lt;/p&gt;
+
+&lt;p&gt;Tiring of a manual search I wondered if there were any free tools on the web to help identify fonts. One quick Google search and voila, I found &lt;a href='http://www.myfonts.com/WhatTheFont/' title='What The Font'&gt;WhatTheFont&lt;/a&gt;, a free tool on &lt;a href='http://www.myfonts.com/' title='MyFont.com'&gt;myfont.com&lt;/a&gt; which quickly found my font with a minimal amount of work for me. All I needed to do was upload an image of the font in question, so in my case I stripped out the word in the logo and saved it as a png file. I then uploaded and the site tried to identify what the image was saying. In my case it guessed 100% correct, but in case it was unable to, the sites gives you the ability to tell it what the word(s) say by overriding their guess. Once I had completed that, WhatTheFont gave me a list of guesses for what my mystery font was and sure enough its top/best guess was exactly what I was looking for, this tool was a lifesaver!&lt;/p&gt;</description>
+                <pubDate>Wed, 27 Feb 2013 00:00:00 -0500</pubDate>
+                <link>http://www.thordog.com/2013/02/27/how-to_find-out-the-name-of-a-font/</link>
+                <guid isPermaLink="true">http://www.thordog.com/2013/02/27/how-to_find-out-the-name-of-a-font/</guid>
+            </item>
+        
+            <item>
+                <title>Dawn of a new day</title>
+                <description>&lt;p&gt;One of my New Year&amp;#8217;s resolution for 2013 was to start to blog. I have always enjoyed writing, earlier in my career I wrote regularly for some trade magazines and even wrote a few chapters for a technical book, but recently I only seem to write emails, slides, and reports. I view writing as a vital skill that needs to be exercised so I&amp;#8217;m planning on having 2013 be a year where I routinely blog on a variety of topics, predominately of a technical nature.&lt;/p&gt;
+
+&lt;p&gt;I bought the thordog.com domain several years ago for a side project that never evolved, so I thought it would be good to put it to use for my blogging experiment. I doubt too many people will read this, but that is ok, I&amp;#8217;m viewing this as being more for me than anyone else.&lt;/p&gt;
+
+&lt;h3 id='who_i_am'&gt;Who I am&lt;/h3&gt;
+
+&lt;p&gt;I guess I should introduce myself, my name is Chris Dellinger, I live in the mountains of Virginia with my wife Ginny and my two daughters Eli and Annika and I work remotely for a technology company called &lt;a href='http://www.peoplefluent.com'&gt;Peoplefluent&lt;/a&gt; where I lead the architecture team. I&amp;#8217;ve included links at bottom of all my pages to my profiles on several of my favorite online hangouts, so if you wish to learn more about me, check those sites out.&lt;/p&gt;
+
+&lt;h3 id='what_powers_thordogcom'&gt;What Powers Thordog.com&lt;/h3&gt;
+
+&lt;p&gt;Regardless of what my current job title says, I&amp;#8217;m a programmer at heart, so when it came time to create a blog for myself, I didn&amp;#8217;t go down the traditional path of Wordpress, Tumblr, or Blogger, I instead wanted to create my own so I would have more control over how my blog looked and operated. One thing I heard about through some blogs I followed was an offering from &lt;img align='left' alt='GitHub Octocat' src='/images/octocat.png' style='height:200px' title='GitHub Octocat' /&gt; &lt;a href='http://www.github.com'&gt;GitHub&lt;/a&gt;, one of my favorite technology companies. This offering, &lt;a href='http://pages.github.com/'&gt;GitHub Pages&lt;/a&gt;, allows me to host a static website for free on their servers. After playing around with this technology I was convinced it was ideal for what I needed for my blog, in fact you are now reading a post that is hosted at GitHub. In addition to GitHub Pages, I am utilizing &lt;a href='http://jekyllrb.com/'&gt;Jekyll&lt;/a&gt; to help me produce the website and &lt;a href='http://twitter.github.io/bootstrap/'&gt;Twitter Bootstrap&lt;/a&gt; to help me manage the layouts and styles. In the future as I become more experienced with these technologies and learn some valuable lessons I will write some posts to share my thoughts and lessons learned.&lt;/p&gt;
+
+&lt;h3 id='about_those_pictures'&gt;About Those Pictures&lt;/h3&gt;
+
+&lt;p&gt;One thing you will notice is that each blog post I create will have a large header image embedded within it. I have always loved &amp;#8220;image blogs&amp;#8221; and while I&amp;#8217;m not a photographer and my content won&amp;#8217;t be photo specific, I wanted the look and feel or theme of my blog to involve cool images. Sometimes this image might be tied to the title or content of the post, but more often than not it will just be an image or photograph that I like.&lt;/p&gt;
+
+&lt;p&gt;So, take a look, let me know what you think, and wish me luck in 2013!&lt;/p&gt;</description>
+                <pubDate>Mon, 18 Feb 2013 00:00:00 -0500</pubDate>
+                <link>http://www.thordog.com/2013/02/18/dawn-of-a-new-day/</link>
+                <guid isPermaLink="true">http://www.thordog.com/2013/02/18/dawn-of-a-new-day/</guid>
+            </item>
+        
+    </channel>
+</rss>

@@ -4,6 +4,10 @@ url: http://www.thordog.com
 
 permalink: /:year/:month/:day/:title/
 
+name: Thordog
+description: Personal blog of Chris Dellinger
+url: http://www.thordog.com
+
 author:
     name: Chris Dellinger
     github: cdellinger
