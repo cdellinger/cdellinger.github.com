@@ -8,7 +8,9 @@
         
             <item>
                 <title>502 Bad Gateway on nginx Using Node on Elastic Beanstalk</title>
-                <description>&lt;p&gt;I started to work with &lt;a href='http://aws.amazon.com/elasticbeanstalk/'&gt;Elastic Beanstalk&lt;/a&gt; on &lt;a href='http://aws.amazon.com'&gt;AWS&lt;/a&gt; recently and ran into an issue when trying to deploy a Node.js app that I thought might be worth sharing. I created a test Node.js and Express application locally that worked fine and I then tried deploying using the Elastic Beanstalk console. Everything appeared to deploy correctly but when I tried accessing my url I received the following error &amp;#8220;502 Bad Gateway on nginx/1.2.6&amp;#8221;. Unfortunately this error message didn&amp;#8217;t give me much to go on, but when I looked in the Elastic Beanstalk log files I saw the following entry: &lt;br /&gt; &lt;br /&gt;&lt;/p&gt;
+                <description>&lt;p&gt;I started to work with &lt;a href='http://aws.amazon.com/elasticbeanstalk/'&gt;Elastic Beanstalk&lt;/a&gt; on &lt;a href='http://aws.amazon.com'&gt;AWS&lt;/a&gt; recently and ran into an issue when trying to deploy a Node.js app that I thought might be worth sharing. I created a test Node.js and Express application locally that worked fine and I then tried deploying using the Elastic Beanstalk console. Everything appeared to deploy correctly but when I tried accessing my url I received the following error &amp;#8220;502 Bad Gateway&amp;#8221; on &amp;#8220;nginx/1.2.6&amp;#8221;.&lt;/p&gt;
+&lt;img alt='bad gateway' src='/images/posts/badgateway.png' title='bad gateway' /&gt;
+&lt;p&gt;Unfortunately this error message didn&amp;#8217;t give me much to go on, but when I looked in the Elastic Beanstalk log files I saw the following entry: &lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
 &lt;pre&gt;
 2013/05/18 13:33:37 [error] 1708#0: *11 connect() failed (111: Connection refused) while connecting to upstream, client: 10.159.27.244, server: , request: &quot;GET / HTTP/1.1&quot;, upstream: &quot;http://127.0.0.1:8081/&quot;, host: &quot;fitfavorites.elasticbeanstalk.com&quot;
 &lt;/pre&gt;&lt;br /&gt;
