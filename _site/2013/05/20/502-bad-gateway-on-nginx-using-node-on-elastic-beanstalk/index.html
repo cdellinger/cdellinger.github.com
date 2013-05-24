@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv='Content-Type' content='text/html; charset=utf-8'>
-        <title>Dawn of a new day</title>
+        <title>502 Bad Gateway on nginx Using Node on Elastic Beanstalk</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="description" content="My personal blog">
         <meta name="author" content="Chris Dellinger">
@@ -34,39 +34,38 @@
 
 
     <article class="post">
-    <header style="background-image:url(/images/posts/sunrise.jpg);">
-        <h1 class="post-title">Dawn of a new day</h1>
+    <header style="background-image:url(/images/posts/london.jpg);">
+        <h1 class="post-title">502 Bad Gateway on nginx Using Node on Elastic Beanstalk</h1>
         <div class="post-meta">
-            <time class="post-date" datetime="2013-02-18 00:00:00 -0500" pubdate="">February 18, 2013</time><br/>
-            <cite>Photo <a href="http://www.flickr.com/photos/juliagardner/4466811197/" title="JuliaGardner">JuliaGardner</a></cite>
+            <time class="post-date" datetime="2013-05-20 00:00:00 -0400" pubdate="">May 20, 2013</time><br/>
+            <cite>Photo <a href="http://www.flickr.com/photos/anirudhkoul/3499471010/" title="Anirudh Koul">Anirudh Koul</a></cite>
 
         </div>
     </header>
     <div class="container post-content">
         <div class="row">   
             <div class="span10 offset1 post-content-detail">
-                <p>One of my New Year&#8217;s resolution for 2013 was to start to blog. I have always enjoyed writing, earlier in my career I wrote regularly for some trade magazines and even wrote a few chapters for a technical book, but recently I only seem to write emails, slides, and reports. I view writing as a vital skill that needs to be exercised so I&#8217;m planning on having 2013 be a year where I routinely blog on a variety of topics, predominately of a technical nature.</p>
+                <p>I started to work with <a href='http://aws.amazon.com/elasticbeanstalk/'>Elastic Beanstalk</a> on <a href='http://aws.amazon.com'>AWS</a> recently and ran into an issue when trying to deploy a Node.js app that I thought might be worth sharing. I created a test Node.js and Express application locally that worked fine and I then tried deploying using the Elastic Beanstalk console. Everything appeared to deploy correctly but when I tried accessing my url I received the following error &#8220;502 Bad Gateway on nginx/1.2.6&#8221;. Unfortunately this error message didn&#8217;t give me much to go on, but when I looked in the Elastic Beanstalk log files I saw the following entry: <br /> <br /></p>
+<pre>
+2013/05/18 13:33:37 [error] 1708#0: *11 connect() failed (111: Connection refused) while connecting to upstream, client: 10.159.27.244, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8081/", host: "fitfavorites.elasticbeanstalk.com"
+</pre><br />
+<p>The confusing part of this error message for me was the port number of 8081, that was not the port I was expecting Beanstalk to utilize for my site. Looking at the code that was working locally I realized I had hard coded the port number to 3000. I quickly modified my configuration code with the following snippet. This code allows the application to use either a port setting set in the environment variables or default to 3000 if no port is configured. <br /><br /></p>
+<pre>
+var express = require('express');
+var app = express();
 
-<p>I bought the thordog.com domain several years ago for a side project that never evolved, so I thought it would be good to put it to use for my blogging experiment. I doubt too many people will read this, but that is ok, I&#8217;m viewing this as being more for me than anyone else.</p>
+app.configure(function(){<br />
+  app.set('port', process.env.PORT || 3000);
+  ....
+</pre><br />
+<p>After re-deploying this to AWS, sure enough my problem disappeared. The one thing that was of interest to me was that I did not have to set an environment variable, it appears that Beanstalk has this set already for me.</p>
 
-<h3 id='who_i_am'>Who I am</h3>
-
-<p>I guess I should introduce myself, my name is Chris Dellinger, I live in the mountains of Virginia with my wife Ginny and my two daughters Eli and Annika and I work remotely for a technology company called <a href='http://www.peoplefluent.com'>Peoplefluent</a> where I lead the architecture team. I&#8217;ve included links at bottom of all my pages to my profiles on several of my favorite online hangouts, so if you wish to learn more about me, check those sites out.</p>
-
-<h3 id='what_powers_thordogcom'>What Powers Thordog.com</h3>
-
-<p>Regardless of what my current job title says, I&#8217;m a programmer at heart, so when it came time to create a blog for myself, I didn&#8217;t go down the traditional path of Wordpress, Tumblr, or Blogger, I instead wanted to create my own so I would have more control over how my blog looked and operated. One thing I heard about through some blogs I followed was an offering from <img align='left' alt='GitHub Octocat' src='/images/octocat.png' style='height:200px' title='GitHub Octocat' /> <a href='http://www.github.com'>GitHub</a>, one of my favorite technology companies. This offering, <a href='http://pages.github.com/'>GitHub Pages</a>, allows me to host a static website for free on their servers. After playing around with this technology I was convinced it was ideal for what I needed for my blog, in fact you are now reading a post that is hosted at GitHub. In addition to GitHub Pages, I am utilizing <a href='http://jekyllrb.com/'>Jekyll</a> to help me produce the website and <a href='http://twitter.github.io/bootstrap/'>Twitter Bootstrap</a> to help me manage the layouts and styles. In the future as I become more experienced with these technologies and learn some valuable lessons I will write some posts to share my thoughts and lessons learned.</p>
-
-<h3 id='about_those_pictures'>About Those Pictures</h3>
-
-<p>One thing you will notice is that each blog post I create will have a large header image embedded within it. I have always loved &#8220;image blogs&#8221; and while I&#8217;m not a photographer and my content won&#8217;t be photo specific, I wanted the look and feel or theme of my blog to involve cool images. Sometimes this image might be tied to the title or content of the post, but more often than not it will just be an image or photograph that I like.</p>
-
-<p>So, take a look, let me know what you think, and wish me luck in 2013!</p>
+<p>I hope this helps anyone else who runs into this same issue. Have fun with Node on Elastic Beanstalk!</p>
             </div>
         </div>
         <div class="row">
             <div class="span12 post-meta">
-                 <a href="/tags/blog" rel="tooltip" title="View pages tagged with &quot;blog&quot;"><span class="label label-info">blog</span></a>     <a href="/tags/Twitter Bootstrap" rel="tooltip" title="View pages tagged with &quot;Twitter Bootstrap&quot;"><span class="label label-info">Twitter Bootstrap</span></a>     <a href="/tags/GitHub Pages" rel="tooltip" title="View pages tagged with &quot;GitHub Pages&quot;"><span class="label label-info">GitHub Pages</span></a>     <a href="/tags/Jekyll" rel="tooltip" title="View pages tagged with &quot;Jekyll&quot;"><span class="label label-info">Jekyll</span></a>   
+                 <a href="/tags/Node" rel="tooltip" title="View pages tagged with &quot;Node&quot;"><span class="label label-info">Node</span></a>     <a href="/tags/AWS" rel="tooltip" title="View pages tagged with &quot;AWS&quot;"><span class="label label-info">AWS</span></a>     <a href="/tags/Elastic Beanstalk" rel="tooltip" title="View pages tagged with &quot;Elastic Beanstalk&quot;"><span class="label label-info">Elastic Beanstalk</span></a>     <a href="/tags/Nginx" rel="tooltip" title="View pages tagged with &quot;Nginx&quot;"><span class="label label-info">Nginx</span></a>   
             </div>
         </div>
 
@@ -74,13 +73,13 @@
             <div class="span1">
             </div>
             <div class="span2">
-                
+                 <a class="btn" href="/2013/03/10/finding-available-domain-names/" title="Finding Available Domain Names">Previous Post</a>  
             </div>
             <div class="span7">
               <a href="https://twitter.com/share" class="twitter-share-button" data-via="">Tweet</a> <g:plusone size="medium"></g:plusone></h5>
             </div>
             <div class="span2">
-                  <a class="btn" href="/2013/02/27/how-to_find-out-the-name-of-a-font/" title="How to find out the name of a font">Next Post</a>          
+                        
             </div>
         </div>
         
