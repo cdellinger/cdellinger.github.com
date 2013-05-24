@@ -7,8 +7,8 @@
         <atom:link href="http://www.thordog.com/feed.xml" rel="self" type="application/rss+xml" />
         
             <item>
-                <title>502 Bad Gateway on nginx Using Node on Elastic Beanstalk</title>
-                <description>&lt;p&gt;I started to work with &lt;a href='http://aws.amazon.com/elasticbeanstalk/'&gt;Elastic Beanstalk&lt;/a&gt; on &lt;a href='http://aws.amazon.com'&gt;AWS&lt;/a&gt; recently and ran into an issue when trying to deploy a Node.js app that I thought might be worth sharing. I created a test Node.js and Express application locally that worked fine and I then tried deploying using the Elastic Beanstalk console. Everything appeared to deploy correctly but when I tried accessing my url I received the following error &amp;#8220;502 Bad Gateway&amp;#8221; on &amp;#8220;nginx/1.2.6&amp;#8221;.&lt;/p&gt;
+                <title>502 Bad Gateway on nginx Using Node.js on Elastic Beanstalk</title>
+                <description>&lt;p&gt;I started to work with &lt;a href='http://aws.amazon.com/elasticbeanstalk/'&gt;Elastic Beanstalk&lt;/a&gt; on &lt;a href='http://aws.amazon.com'&gt;AWS&lt;/a&gt; recently and ran into an issue when trying to deploy a &lt;a href='http://www.nodejs.org'&gt;Node.js&lt;/a&gt; app that I thought might be worth sharing. I created a test Node.js and Express application locally that worked fine and I then tried deploying using the Elastic Beanstalk console. Everything appeared to deploy correctly but when I tried accessing my url I received the following error &amp;#8220;502 Bad Gateway&amp;#8221; on &amp;#8220;nginx/1.2.6&amp;#8221;.&lt;/p&gt;
 &lt;img alt='bad gateway' src='/images/posts/badgateway.png' title='bad gateway' /&gt;
 &lt;p&gt;Unfortunately this error message didn&amp;#8217;t give me much to go on, but when I looked in the Elastic Beanstalk log files I saw the following entry: &lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
 &lt;pre&gt;
@@ -27,8 +27,8 @@ app.configure(function(){&lt;br /&gt;
 
 &lt;p&gt;I hope this helps anyone else who runs into this same issue. Have fun with Node on Elastic Beanstalk!&lt;/p&gt;</description>
                 <pubDate>Mon, 20 May 2013 00:00:00 -0400</pubDate>
-                <link>http://www.thordog.com/2013/05/20/502-bad-gateway-on-nginx-using-node-on-elastic-beanstalk/</link>
-                <guid isPermaLink="true">http://www.thordog.com/2013/05/20/502-bad-gateway-on-nginx-using-node-on-elastic-beanstalk/</guid>
+                <link>http://www.thordog.com/2013/05/20/502-bad-gateway-on-nginx-using-nodejs-on-elastic-beanstalk/</link>
+                <guid isPermaLink="true">http://www.thordog.com/2013/05/20/502-bad-gateway-on-nginx-using-nodejs-on-elastic-beanstalk/</guid>
             </item>
         
             <item>

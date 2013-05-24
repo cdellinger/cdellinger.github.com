@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv='Content-Type' content='text/html; charset=utf-8'>
-        <title>Finding Available Domain Names</title>
+        <title>502 Bad Gateway on nginx Using Node.js on Elastic Beanstalk</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="description" content="My personal blog">
         <meta name="author" content="Chris Dellinger">
@@ -34,23 +34,40 @@
 
 
     <article class="post">
-    <header style="background-image:url(/images/posts/northernlights2.jpg);">
-        <h1 class="post-title">Finding Available Domain Names</h1>
+    <header style="background-image:url(/images/posts/london.jpg);">
+        <h1 class="post-title">502 Bad Gateway on nginx Using Node.js on Elastic Beanstalk</h1>
         <div class="post-meta">
-            <time class="post-date" datetime="2013-03-10 00:00:00 -0500" pubdate="">March 10, 2013</time><br/>
-            <cite>Photo <a href="http://www.flickr.com/photos/tittentem/8462174285/" title="Tor Even Mathisen">Tor Even Mathisen</a></cite>
+            <time class="post-date" datetime="2013-05-20 00:00:00 -0400" pubdate="">May 20, 2013</time><br/>
+            <cite>Photo <a href="http://www.flickr.com/photos/anirudhkoul/3499471010/" title="Anirudh Koul">Anirudh Koul</a></cite>
 
         </div>
     </header>
     <div class="container post-content">
         <div class="row">   
             <div class="span10 offset1 post-content-detail">
-                <p>I came across a service for finding available domain names that I absolutely love, its called <a href='http://www.bustaname.com/' title='Bust A Name'>Bust A Name</a>. <a href='http://www.bustaname.com'><img align='right' src='/images/posts/bustaname.gif' style='padding-left:5px;padding-top:5px;' /></a>To use the service you choose several keywords that you would potentially like in your domain name and it checks out all the available permutations. This is 100 times better than the old one at a time domain lookups I’ve previously performed. Take a moment to check this site out and let me know what you think.</p>
+                <p>I started to work with <a href='http://aws.amazon.com/elasticbeanstalk/'>Elastic Beanstalk</a> on <a href='http://aws.amazon.com'>AWS</a> recently and ran into an issue when trying to deploy a <a href='http://www.nodejs.org'>Node.js</a> app that I thought might be worth sharing. I created a test Node.js and Express application locally that worked fine and I then tried deploying using the Elastic Beanstalk console. Everything appeared to deploy correctly but when I tried accessing my url I received the following error &#8220;502 Bad Gateway&#8221; on &#8220;nginx/1.2.6&#8221;.</p>
+<img alt='bad gateway' src='/images/posts/badgateway.png' title='bad gateway' />
+<p>Unfortunately this error message didn&#8217;t give me much to go on, but when I looked in the Elastic Beanstalk log files I saw the following entry: <br /><br /></p>
+<pre>
+2013/05/18 13:33:37 [error] 1708#0: *11 connect() failed (111: Connection refused) while connecting to upstream, client: 10.159.27.244, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8081/", host: "fitfavorites.elasticbeanstalk.com"
+</pre><br />
+<p>The confusing part of this error message for me was the port number of 8081, that was not the port I was expecting Beanstalk to utilize for my site. Looking at the code that was working locally I realized I had hard coded the port number to 3000. I quickly modified my configuration code with the following snippet. This code allows the application to use either a port setting set in the environment variables or default to 3000 if no port is configured. <br /><br /></p>
+<pre>
+var express = require('express');
+var app = express();
+
+app.configure(function(){<br />
+  app.set('port', process.env.PORT || 3000);
+  ....
+</pre><br />
+<p>After re-deploying this to AWS, sure enough my problem disappeared. The one thing that was of interest to me was that I did not have to set an environment variable, it appears that Beanstalk has this set already for me.</p>
+
+<p>I hope this helps anyone else who runs into this same issue. Have fun with Node on Elastic Beanstalk!</p>
             </div>
         </div>
         <div class="row">
             <div class="span12 post-meta">
-                 <a href="/tags/domain names" rel="tooltip" title="View pages tagged with &quot;domain names&quot;"><span class="label label-info">domain names</span></a>   
+                 <a href="/tags/Node" rel="tooltip" title="View pages tagged with &quot;Node&quot;"><span class="label label-info">Node</span></a>     <a href="/tags/AWS" rel="tooltip" title="View pages tagged with &quot;AWS&quot;"><span class="label label-info">AWS</span></a>     <a href="/tags/Elastic Beanstalk" rel="tooltip" title="View pages tagged with &quot;Elastic Beanstalk&quot;"><span class="label label-info">Elastic Beanstalk</span></a>     <a href="/tags/Nginx" rel="tooltip" title="View pages tagged with &quot;Nginx&quot;"><span class="label label-info">Nginx</span></a>   
             </div>
         </div>
 
@@ -58,13 +75,13 @@
             <div class="span1">
             </div>
             <div class="span2">
-                 <a class="btn" href="/2013/02/27/how-to_find-out-the-name-of-a-font/" title="How to find out the name of a font">Previous Post</a>  
+                 <a class="btn" href="/2013/03/10/finding-available-domain-names/" title="Finding Available Domain Names">Previous Post</a>  
             </div>
             <div class="span7">
               <a href="https://twitter.com/share" class="twitter-share-button" data-via="">Tweet</a> <g:plusone size="medium"></g:plusone></h5>
             </div>
             <div class="span2">
-                  <a class="btn" href="/2013/05/20/502-bad-gateway-on-nginx-using-nodejs-on-elastic-beanstalk/" title="502 Bad Gateway on nginx Using Node.js on Elastic Beanstalk">Next Post</a>          
+                        
             </div>
         </div>
         
