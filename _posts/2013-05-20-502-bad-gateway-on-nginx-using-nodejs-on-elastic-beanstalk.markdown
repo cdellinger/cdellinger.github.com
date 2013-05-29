@@ -2,8 +2,8 @@
 comments: true
 date: 2013-05-20
 layout: post
-title: 502 Bad Gateway on nginx Using Node.js on Elastic Beanstalk
-summary: I started to work with Elastic Beanstalk on AWS recently and ran into an issue when trying to deploy a Node.js app that I thought might be worth sharing.  I created a test Node.js and Express application locally that worked fine and I then tried deploying using the Elastic Beanstalk console.  Everything appeared to deploy correctly but when I tried accessing my url I received the following error "502 Bad Gateway on nginx/1.2.6"...
+title: Troubleshooting 502 Bad Gateway on nginx Using Node.js on Elastic Beanstalk
+summary: I started to work with Elastic Beanstalk on AWS recently and ran into an issue when trying to deploy a Node.js app that I thought might be worth sharing.  I created a test Node.js and Express application locally that worked fine and I then tried deploying using the Elastic Beanstalk console.  Everything appeared to deploy correctly but when I tried accessing my url I received the following error '502 Bad Gateway on nginx/1.2.6'...
 summary_horizontal_position: left
 summary_vertical_position: 10
 additional_title_css: small-title
